@@ -6,13 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.project.iris.customViews.TicketView
+import com.project.iris.model.Receipt
 
 
 /**
  * Created by RanaAli on 6/26/17.
  */
-class HomeViewPagerAdaptor(context: Context) : PagerAdapter() {
+class HomeViewPagerAdaptor(context: Context, receipt: List<Receipt>) : PagerAdapter() {
     var mContext = context
+    var mReceipt: List<Receipt> = receipt
     var mLayoutInflater: LayoutInflater
 
     init {
@@ -31,7 +33,7 @@ class HomeViewPagerAdaptor(context: Context) : PagerAdapter() {
     }
 
     override fun getCount(): Int {
-        return 6
+        return mReceipt.size
     }
 
     override fun destroyItem(container: ViewGroup?, position: Int, `object`: Any?) {

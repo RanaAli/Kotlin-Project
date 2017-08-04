@@ -13,6 +13,7 @@ class MainActivity : KBaseActivity() {
 
         var homeView = HomeView(findViewById(R.id.homeRootDrawerLayout))
         var homePresenter = HomePresenter(homeView)
+        homePresenter.getReceipts()
 
     }
 }
