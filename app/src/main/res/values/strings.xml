@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">iris</string>
+
+    <string-array name="drawerReceiptType">
+        <item>"All Receipt"</item>
+        <item>"Personal Receipt"</item>
+        <item>"Business Receipt"</item>
+    </string-array>
+
+    <string-array name="drawer_options">
+        <item>"Eco FootPrint"</item>
+        <item>"Profile"</item>
+        <item>"About"</item>
+        <item>"Logout"</item>
+    </string-array>
+
+</resources>

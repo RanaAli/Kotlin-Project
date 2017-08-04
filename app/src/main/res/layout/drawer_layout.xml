@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/left_drawer"
+    android:layout_width="240dp"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    android:background="#aaa"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding16">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Brand Logo goes here" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="240dp"
+        android:layout_height="1dp"
+        android:background="#111" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding16">
+
+        <ImageView
+            android:id="@+id/profileImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="@dimen/padding16"
+            app:srcCompat="@mipmap/ic_launcher" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/profileImageView"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Name" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Number" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="240dp"
+        android:layout_height="1dp"
+        android:background="#111" />
+
+    <ListView
+        android:id="@+id/receiptsListView"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/black"
+        android:dividerHeight="1dp" />
+
+    <View
+        android:layout_width="240dp"
+        android:layout_height="1dp"
+        android:background="#111" />
+
+    <ListView
+        android:id="@+id/optionsListView"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/black"
+        android:dividerHeight="1dp" />
+
+</LinearLayout>
