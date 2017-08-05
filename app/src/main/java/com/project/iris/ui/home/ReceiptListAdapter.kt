@@ -16,9 +16,11 @@ import com.project.iris.ui.home.ReceiptListAdapter.ReceiptItemViewHolder
  */
 class ReceiptListAdapter : RecyclerView.Adapter<ReceiptItemViewHolder> {
   var receiptItems: List<ReceiptItem>
+  var limit: Int
 
-  constructor(receiptItems: List<ReceiptItem>) : super() {
+  constructor(receiptItems: List<ReceiptItem>, limit: Int) : super() {
     this.receiptItems = receiptItems
+    this.limit = limit
   }
 
   override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ReceiptItemViewHolder {
@@ -33,7 +35,11 @@ class ReceiptListAdapter : RecyclerView.Adapter<ReceiptItemViewHolder> {
   }
 
   override fun getItemCount(): Int {
-    return receiptItems.size
+    if (limit != -1 && limit < receiptItems.size) {
+      return limit
+    } else {
+      return receiptItems.size
+    }
   }
 
   class ReceiptItemViewHolder : RecyclerView.ViewHolder {

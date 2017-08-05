@@ -73,43 +73,23 @@ class ReceiptView {
     storeNameTextView.text = receipt.merchantName
     storeLocationTextView.text = "Location missing in api"
 
-    var url = receipt?.merchantLogo
+    val url = receipt.merchantLogo
     if (url != null) {
       ImageHelper.setImage(mView.context, url, storeLogoView)
     }
 
-    var receiptData = receipt.recepitData
-    var receiptItems = receiptData?.receiptItems
-
-//    if (receiptItems != null && receiptItems.isNotEmpty()) {
-//      var itemsLeft = receiptItems.size
-//
-//      item1TextView.text = receiptItems[0].name
-//      item1PriceTextView.text = receiptItems[0].total.toString()
-//      itemsLeft--
-//
-//      if (receiptItems.size > 1) {
-//        item2TextView.text = receiptItems[1].name
-//        item2PriceTextView.text = receiptItems[1].total.toString()
-//        itemsLeft--
-//      }
-//
-//      if (receiptItems.size > 2) {
-//        item3TextView.text = receiptItems[2].name
-//        item3PriceTextView.text = receiptItems[2].total.toString()
-//        itemsLeft--
-//      }
-//
-//      if (itemsLeft == 0) {
-//        receiptItemCountTextView.text = ""
-//      } else {
-//        receiptItemCountTextView.text = itemsLeft.toString() + " items left..."
-//      }
-//    }
+    val receiptData = receipt.recepitData
+    val receiptItems = receiptData?.receiptItems
 
     if (receiptItems != null) {
-      var itemAdapter: ReceiptListAdapter = ReceiptListAdapter(receiptItems)
+      val itemAdapter: ReceiptListAdapter = ReceiptListAdapter(receiptItems, limit)
       recyclerView.adapter = itemAdapter
+
+      if (receiptItems.size > limit) {
+        receiptItemCountTextView.text = (receiptItems.size - limit).toString() + " items left..."
+      } else {
+        receiptItemCountTextView.visibility = View.GONE
+      }
     }
 
     totalPriceTextView.text = receipt.total.toString()
