@@ -8,7 +8,7 @@ class ReceiptData {
   var cashTendered: Int? = null
   @Json(name = "tax")
   var tax: Int? = null
-  @Json(name = "receiptItems")
+  @Json(name = "items")
   var receiptItems: List<ReceiptItem>? = null
   @Json(name = "subtotal")
   var subtotal: Int? = null

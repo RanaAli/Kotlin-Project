@@ -3,6 +3,8 @@ package com.project.iris.repositories
 import com.project.iris.conts.Constants
 import com.project.iris.model.Receipt
 import com.project.iris.webApi.Api
+import com.squareup.moshi.KotlinJsonAdapterFactory
+import com.squareup.moshi.Moshi
 import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -27,11 +29,16 @@ class ApiRepository {
     interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
     val client = OkHttpClient.Builder().addInterceptor(interceptor).build()
 
+    val moshi = Moshi.Builder()
+        .add(KotlinJsonAdapterFactory())
+        .build()
+
     retrofit = Retrofit.Builder().baseUrl(Constants.BASE_URL)
         .client(client)
         .addCallAdapterFactory(
-            RxJava2CallAdapterFactory.create()).addConverterFactory(
-        MoshiConverterFactory.create()).build()
+            RxJava2CallAdapterFactory.create())
+        .addConverterFactory(
+            MoshiConverterFactory.create(moshi)).build()
 
     apiService = retrofit.create(Api::class.java)
   }

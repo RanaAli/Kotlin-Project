@@ -16,7 +16,7 @@ class Receipt {
   var paymentType: String? = null
   @Json(name = "merchant_id")
   var merchantId: Int? = null
-  @Json(name = "receiptData")
+  @Json(name = "data")
   var recepitData: ReceiptData? = null
   @Json(name = "merchant_logo")
   var merchantLogo: String? = null

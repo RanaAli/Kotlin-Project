@@ -21,13 +21,11 @@ class HomePresenter constructor(homeView: HomeView)
     getView().showProgress()
     apiRepo.getAllReceipts("0558124206", object : Observer<List<Receipt>> {
       override fun onComplete() {
-        TODO(
-            "not implemented") //To change body of created functions use File | Settings | File Templates.
+        getView().dismissProgress()
       }
 
       override fun onSubscribe(d: Disposable) {
-        TODO(
-            "not implemented") //To change body of created functions use File | Settings | File Templates.
+
       }
 
       override fun onNext(t: List<Receipt>) {
