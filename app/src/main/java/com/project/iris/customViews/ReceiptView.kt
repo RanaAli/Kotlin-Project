@@ -15,7 +15,7 @@ import com.project.iris.utils.ImageHelper
 /**
  * Created by RanaAli on 6/29/17.
  */
-class TicketView {
+class ReceiptView {
   var mView: View
 
   @BindView(R.id.receiptStoreNameTextView)
@@ -54,7 +54,7 @@ class TicketView {
 
   constructor(context: Context?, viewGroup: ViewGroup?) {
     var view = LayoutInflater.from(context)
-        .inflate(R.layout.ticket_view, viewGroup, false)
+        .inflate(R.layout.receipt_view, viewGroup, false)
     viewGroup?.addView(view)
 
     mView = view

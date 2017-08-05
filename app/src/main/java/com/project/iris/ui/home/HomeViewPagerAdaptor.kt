@@ -5,7 +5,7 @@ import android.support.v4.view.PagerAdapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.project.iris.customViews.TicketView
+import com.project.iris.customViews.ReceiptView
 import com.project.iris.model.Receipt
 
 
@@ -23,10 +23,10 @@ class HomeViewPagerAdaptor(context: Context, receipt: List<Receipt>) : PagerAdap
   }
 
   override fun instantiateItem(container: ViewGroup?, position: Int): Any {
-    var ticketView: TicketView = TicketView(container?.context, container)
-    ticketView.setData(mReceipt[position])
+    var receiptView: ReceiptView = ReceiptView(container?.context, container)
+    receiptView.setData(mReceipt[position])
 
-    return ticketView?.getView() as Any
+    return receiptView?.getView() as Any
   }
 
   override fun isViewFromObject(view: View?, `object`: Any?): Boolean {
