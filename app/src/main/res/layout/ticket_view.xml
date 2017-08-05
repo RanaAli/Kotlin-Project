@@ -21,23 +21,40 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
-        android:padding="@dimen/padding16"
+        android:paddingLeft="@dimen/padding16"
+        android:paddingRight="@dimen/padding16"
         >
 
-      <TextView
-          android:id="@+id/receiptStoreNameTextView"
+      <LinearLayout
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          tools:text="Carrefour"
-          android:textSize="40sp"
-          />
+          android:gravity="center_vertical"
+          android:orientation="horizontal"
+          >
+        <TextView
+            android:id="@+id/receiptStoreNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:textSize="40sp"
+            tools:text="Carrefour"
+            />
+
+        <ImageView
+            android:id="@+id/receiptStoreLogoImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxHeight="50dp"
+            android:maxWidth="50dp"
+            />
+      </LinearLayout>
 
       <TextView
           android:id="@+id/receiptStoreLocationTextView"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          tools:text="Location"
           android:textSize="16sp"
+          tools:text="Location"
           />
 
     </LinearLayout>
@@ -45,14 +62,17 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:layout_marginBottom="@dimen/padding16"
+        android:layout_marginTop="@dimen/padding16"
         android:background="@android:color/holo_green_dark"
         />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/padding16"
+        android:paddingRight="@dimen/padding16"
         android:orientation="vertical"
-        android:padding="@dimen/padding16"
         >
 
       <RelativeLayout
@@ -144,6 +164,8 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:layout_marginBottom="@dimen/padding16"
+        android:layout_marginTop="@dimen/padding16"
         android:background="@android:color/holo_green_dark"
         />
 
@@ -152,13 +174,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        tools:text="256 Aed"
         android:textSize="60sp"
+        tools:text="256 Aed"
         />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:layout_marginBottom="@dimen/padding16"
+        android:layout_marginTop="@dimen/padding16"
         android:background="@android:color/holo_green_dark"
         />
 

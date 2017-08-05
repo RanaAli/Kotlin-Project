@@ -4,11 +4,13 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import butterknife.BindView
 import butterknife.ButterKnife
 import com.project.iris.R
 import com.project.iris.model.Receipt
+import com.project.iris.utils.ImageHelper
 
 /**
  * Created by RanaAli on 6/29/17.
@@ -20,6 +22,8 @@ class TicketView {
   lateinit var storeNameTextView: TextView
   @BindView(R.id.receiptStoreLocationTextView)
   lateinit var storeLocationTextView: TextView
+  @BindView(R.id.receiptStoreLogoImageView)
+  lateinit var storeLogoView: ImageView
 
   @BindView(R.id.receiptItem1TextView)
   lateinit var item1TextView: TextView
@@ -60,7 +64,6 @@ class TicketView {
   }
 
   fun setupView() {
-
   }
 
   fun bindView() {
@@ -74,6 +77,11 @@ class TicketView {
   fun setData(receipt: Receipt) {
     storeNameTextView.text = receipt.merchantName
     storeLocationTextView.text = "Location missing in api"
+
+    var url = receipt?.merchantLogo
+    if(url != null) {
+      ImageHelper.setImage(mView.context, url, storeLogoView)
+    }
 
     var receiptData = receipt.recepitData
     var receiptItems = receiptData?.receiptItems
