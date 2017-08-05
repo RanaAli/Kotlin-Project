@@ -70,79 +70,18 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:paddingLeft="@dimen/padding16"
         android:paddingRight="@dimen/padding16"
-        android:orientation="vertical"
         >
 
-      <RelativeLayout
+      <android.support.v7.widget.RecyclerView
+          android:id="@+id/receiptListRecyclerView"
           android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginBottom="4dp"
+          android:layout_height="match_parent"
           >
 
-        <TextView
-            android:id="@+id/receiptItem1TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="item 1"
-            />
-
-        <TextView
-            android:id="@+id/receiptItem1PriceTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            tools:text="100Aed"
-            />
-
-      </RelativeLayout>
-
-      <RelativeLayout
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginBottom="4dp"
-          >
-
-        <TextView
-            android:id="@+id/receiptItem2TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="item 1"
-            />
-
-        <TextView
-            android:id="@+id/receiptItem2PriceTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            tools:text="100Aed"
-            />
-
-      </RelativeLayout>
-
-      <RelativeLayout
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginBottom="4dp"
-          >
-
-        <TextView
-            android:id="@+id/receiptItem3TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="item 1"
-            />
-
-        <TextView
-            android:id="@+id/receiptItem3PriceTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            tools:text="100Aed"
-            />
-
-      </RelativeLayout>
+      </android.support.v7.widget.RecyclerView>
 
       <RelativeLayout
           android:layout_width="match_parent"

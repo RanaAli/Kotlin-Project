@@ -1,6 +1,8 @@
 package com.project.iris.customViews
 
 import android.content.Context
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +12,7 @@ import butterknife.BindView
 import butterknife.ButterKnife
 import com.project.iris.R
 import com.project.iris.model.Receipt
+import com.project.iris.ui.home.ReceiptListAdapter
 import com.project.iris.utils.ImageHelper
 
 /**
@@ -25,19 +28,8 @@ class ReceiptView {
   @BindView(R.id.receiptStoreLogoImageView)
   lateinit var storeLogoView: ImageView
 
-  @BindView(R.id.receiptItem1TextView)
-  lateinit var item1TextView: TextView
-  @BindView(R.id.receiptItem2TextView)
-  lateinit var item2TextView: TextView
-  @BindView(R.id.receiptItem3TextView)
-  lateinit var item3TextView: TextView
-
-  @BindView(R.id.receiptItem1PriceTextView)
-  lateinit var item1PriceTextView: TextView
-  @BindView(R.id.receiptItem2PriceTextView)
-  lateinit var item2PriceTextView: TextView
-  @BindView(R.id.receiptItem3PriceTextView)
-  lateinit var item3PriceTextView: TextView
+  @BindView(R.id.receiptListRecyclerView)
+  lateinit var recyclerView: RecyclerView
 
   @BindView(R.id.receiptItemCountTextView)
   lateinit var receiptItemCountTextView: TextView
@@ -48,8 +40,8 @@ class ReceiptView {
   constructor(view: View) {
     mView = view
 
-    setupView()
     bindView()
+    setupView()
   }
 
   constructor(context: Context?, viewGroup: ViewGroup?) {
@@ -59,11 +51,14 @@ class ReceiptView {
 
     mView = view
 
-    setupView()
     bindView()
+    setupView()
   }
 
   fun setupView() {
+    val mLayoutManager = LinearLayoutManager(mView.getContext())
+    recyclerView.setLayoutManager(mLayoutManager)
+
   }
 
   fun bindView() {
@@ -74,42 +69,47 @@ class ReceiptView {
     return mView
   }
 
-  fun setData(receipt: Receipt) {
+  fun setData(receipt: Receipt, limit: Int) {
     storeNameTextView.text = receipt.merchantName
     storeLocationTextView.text = "Location missing in api"
 
     var url = receipt?.merchantLogo
-    if(url != null) {
+    if (url != null) {
       ImageHelper.setImage(mView.context, url, storeLogoView)
     }
 
     var receiptData = receipt.recepitData
     var receiptItems = receiptData?.receiptItems
 
-    if (receiptItems != null && receiptItems.isNotEmpty()) {
-      var itemsLeft = receiptItems.size
+//    if (receiptItems != null && receiptItems.isNotEmpty()) {
+//      var itemsLeft = receiptItems.size
+//
+//      item1TextView.text = receiptItems[0].name
+//      item1PriceTextView.text = receiptItems[0].total.toString()
+//      itemsLeft--
+//
+//      if (receiptItems.size > 1) {
+//        item2TextView.text = receiptItems[1].name
+//        item2PriceTextView.text = receiptItems[1].total.toString()
+//        itemsLeft--
+//      }
+//
+//      if (receiptItems.size > 2) {
+//        item3TextView.text = receiptItems[2].name
+//        item3PriceTextView.text = receiptItems[2].total.toString()
+//        itemsLeft--
+//      }
+//
+//      if (itemsLeft == 0) {
+//        receiptItemCountTextView.text = ""
+//      } else {
+//        receiptItemCountTextView.text = itemsLeft.toString() + " items left..."
+//      }
+//    }
 
-      item1TextView.text = receiptItems[0].name
-      item1PriceTextView.text = receiptItems[0].total.toString()
-      itemsLeft--
-
-      if (receiptItems.size > 1) {
-        item2TextView.text = receiptItems[1].name
-        item2PriceTextView.text = receiptItems[1].total.toString()
-        itemsLeft--
-      }
-
-      if (receiptItems.size > 2) {
-        item3TextView.text = receiptItems[2].name
-        item3PriceTextView.text = receiptItems[2].total.toString()
-        itemsLeft--
-      }
-
-      if (itemsLeft == 0) {
-        receiptItemCountTextView.text = ""
-      } else {
-        receiptItemCountTextView.text = itemsLeft.toString() + " items left..."
-      }
+    if (receiptItems != null) {
+      var itemAdapter: ReceiptListAdapter = ReceiptListAdapter(receiptItems)
+      recyclerView.adapter = itemAdapter
     }
 
     totalPriceTextView.text = receipt.total.toString()

@@ -14,7 +14,7 @@ import com.project.iris.model.Receipt
  */
 class HomeViewPagerAdaptor(context: Context, receipt: List<Receipt>) : PagerAdapter() {
   var mContext = context
-  var mReceipt: List<Receipt> = receipt
+  var mReceipts: List<Receipt> = receipt
   var mLayoutInflater: LayoutInflater
 
   init {
@@ -24,7 +24,7 @@ class HomeViewPagerAdaptor(context: Context, receipt: List<Receipt>) : PagerAdap
 
   override fun instantiateItem(container: ViewGroup?, position: Int): Any {
     var receiptView: ReceiptView = ReceiptView(container?.context, container)
-    receiptView.setData(mReceipt[position])
+    receiptView.setData(mReceipts[position], 3)
 
     return receiptView?.getView() as Any
   }
@@ -34,7 +34,7 @@ class HomeViewPagerAdaptor(context: Context, receipt: List<Receipt>) : PagerAdap
   }
 
   override fun getCount(): Int {
-    return mReceipt.size
+    return mReceipts.size
   }
 
   override fun destroyItem(container: ViewGroup?, position: Int, `object`: Any?) {
