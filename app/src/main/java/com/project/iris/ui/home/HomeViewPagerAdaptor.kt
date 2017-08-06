@@ -4,6 +4,7 @@ import android.content.Context
 import android.support.v4.view.PagerAdapter
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.OnClickListener
 import android.view.ViewGroup
 import com.project.iris.customViews.ReceiptView
 import com.project.iris.model.Receipt
@@ -16,6 +17,7 @@ class HomeViewPagerAdaptor(context: Context, receipt: List<Receipt>) : PagerAdap
   var mContext = context
   var mReceipts: List<Receipt> = receipt
   var mLayoutInflater: LayoutInflater
+  lateinit var callback: HomeViewPagerAdaptorCallback
 
   init {
     mLayoutInflater = mContext
@@ -24,7 +26,13 @@ class HomeViewPagerAdaptor(context: Context, receipt: List<Receipt>) : PagerAdap
 
   override fun instantiateItem(container: ViewGroup?, position: Int): Any {
     var receiptView: ReceiptView = ReceiptView(container?.context, container)
+
     receiptView.setData(mReceipts[position], 3)
+    receiptView.setClickListener(OnClickListener {
+      if (callback != null) {
+        callback.onReceiptClicked(mReceipts[position])
+      }
+    })
 
     return receiptView?.getView() as Any
   }
@@ -43,6 +51,10 @@ class HomeViewPagerAdaptor(context: Context, receipt: List<Receipt>) : PagerAdap
 
   override fun getPageTitle(position: Int): CharSequence {
     return position.toString()
+  }
+
+  interface HomeViewPagerAdaptorCallback {
+    fun onReceiptClicked(receipt: Receipt);
   }
 
 }

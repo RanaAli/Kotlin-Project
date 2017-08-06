@@ -14,7 +14,7 @@ class HomePresenter constructor(homeView: HomeView)
   : KBasePresenter<HomeView, HomeViewICallBacks>(homeView), HomeIPresenter {
 
   private var apiRepo: ApiRepository = ApiRepository()
-
+  lateinit var callback: HomePresenterCallback
 
   override fun getReceipts() {
 
@@ -31,6 +31,13 @@ class HomePresenter constructor(homeView: HomeView)
       override fun onNext(t: List<Receipt>) {
         getView().dismissProgress()
         var adapter = HomeViewPagerAdaptor(getView().getContext(), t)
+        adapter.callback = object: HomeViewPagerAdaptor.HomeViewPagerAdaptorCallback{
+          override fun onReceiptClicked(receipt: Receipt) {
+            if(callback != null){
+              callback.showReceiptDetails(receipt)
+            }
+          }
+        }
         getView().setReceiptAdapter(adapter)
       }
 
@@ -40,32 +47,10 @@ class HomePresenter constructor(homeView: HomeView)
       }
     })
 
+  }
 
-//    var call = apiRepo.getAllReceipts("0558124206")
-
-
-//    call.enqueue(object : Callback<List<Receipt>> {
-//      override fun onFailure(call: Call<List<Receipt>>?, t: Throwable?) {
-//        getView().dismissProgress()
-//        Log.e("HomePresenter", "exception" + t.toString())
-//      }
-//
-//      override fun onResponse(call: Call<List<Receipt>>?, response: Response<List<Receipt>>?) {
-//        getView().dismissProgress()
-//
-//
-//        if (response != null && response.isSuccessful && response.body() != null) {
-//          var receipts = response.body()
-//          if(receipts != null) {
-//            var adapter = HomeViewPagerAdaptor(getView().getContext(), receipts)
-//            getView().setReceiptAdapter(adapter)
-//          }
-//        }
-//
-//      }
-//    })
-
-
+  interface HomePresenterCallback{
+    fun showReceiptDetails(receipt: Receipt)
   }
 
   override fun getViewCallbacks(): HomeViewICallBacks {

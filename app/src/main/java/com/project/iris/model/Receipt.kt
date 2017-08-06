@@ -1,8 +1,14 @@
 package com.project.iris.model
 
 import com.squareup.moshi.Json
+import paperparcel.PaperParcel
+import paperparcel.PaperParcelable
 
-class Receipt {
+@PaperParcel
+data class Receipt(val i: Int = 1) : PaperParcelable{
+  companion object {
+    @JvmField val CREATOR = PaperParcelReceipt.CREATOR
+  }
 
   @Json(name = "barcode")
   var barcode: String? = null
@@ -33,7 +39,7 @@ class Receipt {
   @Json(name = "subtotal")
   var subtotal: Int? = null
   @Json(name = "merchant_sale_id")
-  var merchantSaleId: Any? = null
+  var merchantSaleId: String? = null
   @Json(name = "merchant_employee_name")
   var merchantEmployeeName: String? = null
 

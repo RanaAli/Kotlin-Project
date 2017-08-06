@@ -1,8 +1,15 @@
 package com.project.iris.model
 
 import com.squareup.moshi.Json
+import paperparcel.PaperParcel
+import paperparcel.PaperParcelable
 
-class ReceiptData {
+@PaperParcel
+data class ReceiptData constructor(var name: String = "") :PaperParcelable{
+
+  companion object {
+    @JvmField val CREATOR = PaperParcelReceiptData.CREATOR
+  }
 
   @Json(name = "cash_tendered")
   var cashTendered: Int? = null
