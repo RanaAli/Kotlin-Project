@@ -7,34 +7,38 @@ import android.content.Context
  */
 
 abstract class KBasePresenter<T : KBaseIView<KBaseIViewCallBacks>, S : KBaseIViewCallBacks>
-    : KBaseIPresenter<T> {
+  : KBaseIPresenter<T> {
 
-    lateinit var mBaseView: T
-    var mViewCallbacks: S
+  lateinit var mBaseView: T
+  var mViewCallbacks: S
 
-    constructor(baseView: T) {
-        attachedView(baseView)
-        mViewCallbacks = getViewCallbacks()
-        mBaseView.setCallBacks(mViewCallbacks)
-    }
+  constructor(baseView: T) {
+    attachedView(baseView)
+    mViewCallbacks = getViewCallbacks()
+    mBaseView.setCallBacks(mViewCallbacks)
+  }
 
 
-    override fun getContext(): Context {
-        return mBaseView.getContext()
-    }
+  override fun getContext(): Context {
+    return mBaseView.getContext()
+  }
 
-    override fun attachedView(baseView: T) {
-        mBaseView = baseView
-    }
+  override fun attachedView(baseView: T) {
+    mBaseView = baseView
+  }
 
-    override fun detachView() {
-    }
+  override fun detachView() {
+  }
 
-    override fun setViewCallbacks(viewCallback: KBaseIViewCallBacks) {
+  override fun getView(): T {
+    return mBaseView
+  }
 
-    }
+  override fun setViewCallbacks(viewCallback: KBaseIViewCallBacks) {
 
-    abstract fun getViewCallbacks(): S
+  }
+
+  abstract fun getViewCallbacks(): S
 
 
 }

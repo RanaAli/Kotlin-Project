@@ -15,4 +15,6 @@ interface KBaseIPresenter<V : KBaseIView<KBaseIViewCallBacks>> {
 
     fun getContext(): Context
 
+    fun getView(): V
+
 }

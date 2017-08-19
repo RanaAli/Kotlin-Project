@@ -7,4 +7,5 @@ import com.project.iris.kotlinBaseClasses.KBaseIPresenter
  */
 interface HomeIPresenter: KBaseIPresenter<HomeView>{
 
+  fun getReceipts()
 }
