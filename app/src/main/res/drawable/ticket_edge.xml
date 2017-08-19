@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <item
+      android:left="2dp"
+    android:height="10dp"
+    android:width="10dp">
+  <shape android:shape="oval">
+    <solid android:color="@color/homeBackgroundColor"/>
+  </shape>
+</item>
+
+  <item
+      android:left="13dp"
+      android:height="10dp"
+      android:width="10dp">
+    <shape android:shape="oval">
+      <solid android:color="@color/homeBackgroundColor"/>
+    </shape>
+  </item>
+
+  <item
+      android:left="24dp"
+      android:height="10dp"
+      android:width="10dp">
+    <shape android:shape="oval" >
+      <solid android:color="@color/homeBackgroundColor"/>
+    </shape>
+  </item>
+
+
+  <item
+      android:left="35dp"
+      android:height="10dp"
+      android:width="10dp">
+    <shape android:shape="oval">
+      <solid android:color="@color/homeBackgroundColor"/>
+    </shape>
+  </item>
+
+  <item
+      android:left="46dp"
+      android:height="10dp"
+      android:width="10dp">
+    <shape android:shape="oval">
+      <solid android:color="@color/homeBackgroundColor"/>
+    </shape>
+  </item>
+
+  <item
+      android:left="57dp"
+      android:height="10dp"
+      android:width="10dp">
+    <shape android:shape="oval">
+      <solid android:color="@color/homeBackgroundColor"/>
+    </shape>
+  </item>
+
+  <item
+      android:left="68dp"
+      android:height="10dp"
+      android:width="10dp">
+    <shape android:shape="oval">
+      <solid android:color="@color/homeBackgroundColor"/>
+    </shape>
+  </item>
+
+  <item
+      android:left="79dp"
+      android:height="10dp"
+      android:width="10dp">
+    <shape android:shape="oval">
+      <solid android:color="@color/homeBackgroundColor"/>
+    </shape>
+  </item>
+
+
+  <item
+      android:left="90dp"
+      android:height="10dp"
+      android:width="10dp">
+    <shape android:shape="oval">
+      <solid android:color="@color/homeBackgroundColor"/>
+    </shape>
+  </item>
+
+  <item
+      android:left="101dp"
+      android:height="10dp"
+      android:width="10dp">
+    <shape android:shape="oval">
+      <solid android:color="@color/homeBackgroundColor"/>
+    </shape>
+  </item>
+
+  <item
+      android:left="112dp"
+      android:height="10dp"
+      android:width="10dp">
+    <shape android:shape="oval">
+      <solid android:color="@color/homeBackgroundColor"/>
+    </shape>
+  </item>
+
+  <item
+      android:left="123dp"
+      android:height="10dp"
+      android:width="10dp">
+    <shape android:shape="oval" >
+      <solid android:color="@color/homeBackgroundColor"/>
+    </shape>
+  </item>
+
+
+  <item
+      android:left="134dp"
+      android:height="10dp"
+      android:width="10dp">
+    <shape android:shape="oval">
+      <solid android:color="@color/homeBackgroundColor"/>
+    </shape>
+  </item>
+
+  <item
+      android:left="145dp"
+      android:height="10dp"
+      android:width="10dp">
+    <shape android:shape="oval">
+      <solid android:color="@color/homeBackgroundColor"/>
+    </shape>
+  </item>
+
+  <item
+      android:left="156dp"
+      android:height="10dp"
+      android:width="10dp">
+    <shape android:shape="oval">
+      <solid android:color="@color/homeBackgroundColor"/>
+    </shape>
+  </item>
+
+  <item
+      android:left="167dp"
+      android:height="10dp"
+      android:width="10dp">
+    <shape android:shape="oval">
+      <solid android:color="@color/homeBackgroundColor"/>
+    </shape>
+  </item>
+
+  <item
+      android:left="178dp"
+      android:height="10dp"
+      android:width="10dp">
+    <shape android:shape="oval">
+      <solid android:color="@color/homeBackgroundColor"/>
+    </shape>
+  </item>
+
+
+  <item
+      android:left="189dp"
+      android:height="10dp"
+      android:width="10dp">
+    <shape android:shape="oval">
+      <solid android:color="@color/homeBackgroundColor"/>
+    </shape>
+  </item>
+
+  <item
+      android:left="200dp"
+      android:height="10dp"
+      android:width="10dp">
+    <shape android:shape="oval">
+      <solid android:color="@color/homeBackgroundColor"/>
+    </shape>
+  </item>
+
+  <item
+      android:left="211dp"
+      android:height="10dp"
+      android:width="10dp">
+    <shape android:shape="oval">
+      <solid android:color="@color/homeBackgroundColor"/>
+    </shape>
+  </item>
+
+  <item
+      android:left="222dp"
+      android:height="10dp"
+      android:width="10dp">
+    <shape android:shape="oval">
+      <solid android:color="@color/homeBackgroundColor"/>
+    </shape>
+  </item>
+
+  <item
+      android:left="233dp"
+      android:height="10dp"
+      android:width="10dp">
+    <shape android:shape="oval">
+      <solid android:color="@color/homeBackgroundColor"/>
+    </shape>
+  </item>
+
+
+  <item
+      android:left="244dp"
+      android:height="10dp"
+      android:width="10dp">
+    <shape android:shape="oval">
+      <solid android:color="@color/homeBackgroundColor"/>
+    </shape>
+  </item>
+
+  <item
+      android:left="255dp"
+      android:height="10dp"
+      android:width="10dp">
+    <shape android:shape="oval">
+      <solid android:color="@color/homeBackgroundColor"/>
+    </shape>
+  </item>
+
+  <item
+      android:left="266dp"
+      android:height="10dp"
+      android:width="10dp">
+    <shape android:shape="oval">
+      <solid android:color="@color/homeBackgroundColor"/>
+    </shape>
+  </item>
+
+  <item
+      android:left="277dp"
+      android:height="10dp"
+      android:width="10dp">
+    <shape android:shape="oval">
+      <solid android:color="@color/homeBackgroundColor"/>
+    </shape>
+  </item>
+
+  <item
+      android:left="288dp"
+      android:height="10dp"
+      android:width="10dp">
+    <shape android:shape="oval">
+      <solid android:color="@color/homeBackgroundColor"/>
+    </shape>
+  </item>
+
+  <item
+      android:left="299dp"
+      android:height="10dp"
+      android:width="10dp">
+    <shape android:shape="oval">
+      <solid android:color="@color/homeBackgroundColor"/>
+    </shape>
+  </item>
+
+  <item
+      android:left="310dp"
+      android:height="10dp"
+      android:width="10dp">
+    <shape android:shape="oval">
+      <solid android:color="@color/homeBackgroundColor"/>
+    </shape>
+  </item>
+
+  <item
+      android:left="321dp"
+      android:height="10dp"
+      android:width="10dp">
+    <shape android:shape="oval">
+      <solid android:color="@color/homeBackgroundColor"/>
+    </shape>
+  </item>
+</layer-list>

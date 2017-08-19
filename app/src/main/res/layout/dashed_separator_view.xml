@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="2dp"
+    android:layout_marginBottom="@dimen/padding16"
+    android:layout_marginLeft="@dimen/padding16"
+    android:layout_marginRight="@dimen/padding16"
+    android:layout_marginTop="@dimen/padding16"
+    android:layerType="software"
+    android:src="@drawable/dotted"
+    tools:showIn="@layout/receipt_view"
+    />

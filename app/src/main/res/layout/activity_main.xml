@@ -18,7 +18,7 @@
         android:id="@+id/homeViewPager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_blue_dark"
+        android:background="@color/homeBackgroundColor"
         android:clipToPadding="false"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"

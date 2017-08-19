@@ -11,6 +11,8 @@
       android:id="@+id/receiptItemTextView"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
+      android:textColor="@color/ticketItemTextColor"
+      android:textSize="@dimen/ticketItemTextSize"
       tools:text="item 1"
       />
 
@@ -18,6 +20,8 @@
       android:id="@+id/receiptItemPriceTextView"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
+      android:textColor="@color/ticketItemTextColor"
+      android:textSize="@dimen/ticketItemTextSize"
       android:layout_alignParentRight="true"
       tools:text="100Aed"
       />
