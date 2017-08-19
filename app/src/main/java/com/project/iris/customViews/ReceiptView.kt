@@ -86,7 +86,7 @@ class ReceiptView {
       val itemAdapter: ReceiptListAdapter = ReceiptListAdapter(receiptItems, limit)
       recyclerView.adapter = itemAdapter
 
-      if (receiptItems.size > limit) {
+      if (limit != -1 || receiptItems.size > limit) {
         receiptItemCountTextView.text = (receiptItems.size - limit).toString() + " items left..."
       } else {
         receiptItemCountTextView.visibility = View.GONE

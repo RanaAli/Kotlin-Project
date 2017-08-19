@@ -3,11 +3,16 @@
     android:id="@+id/receiptDetailsRootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/homeBackgroundColor"
     android:orientation="vertical"
     >
 
   <include
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
       layout="@layout/receipt_view"
+      android:layout_marginLeft="-8dp"
+      android:layout_marginRight="-8dp"
       />
 
 </LinearLayout>

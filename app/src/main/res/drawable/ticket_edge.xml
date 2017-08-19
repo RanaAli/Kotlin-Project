@@ -275,4 +275,40 @@
       <solid android:color="@color/homeBackgroundColor"/>
     </shape>
   </item>
+
+  <item
+      android:left="332dp"
+      android:height="10dp"
+      android:width="10dp">
+    <shape android:shape="oval">
+      <solid android:color="@color/homeBackgroundColor"/>
+    </shape>
+  </item>
+
+  <item
+      android:left="343dp"
+      android:height="10dp"
+      android:width="10dp">
+    <shape android:shape="oval">
+      <solid android:color="@color/homeBackgroundColor"/>
+    </shape>
+  </item>
+
+  <item
+      android:left="354dp"
+      android:height="10dp"
+      android:width="10dp">
+    <shape android:shape="oval">
+      <solid android:color="@color/homeBackgroundColor"/>
+    </shape>
+  </item>
+
+  <item
+      android:left="365dp"
+      android:height="10dp"
+      android:width="10dp">
+    <shape android:shape="oval">
+      <solid android:color="@color/homeBackgroundColor"/>
+    </shape>
+  </item>
 </layer-list>
